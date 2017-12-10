@@ -5,7 +5,7 @@ using System;
 using System.Net;
 using System.Collections.Generic;
 
-namespace NBitcoin.Litecoin
+namespace NBitcoin.Digibyte
 {
 	public class Networks
 	{
@@ -114,6 +114,8 @@ namespace NBitcoin.Litecoin
 				CoinbaseMaturity = 100,
 				HashGenesisBlock = new uint256("12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2"),
 				GetPoWHash = GetPoWHash,
+                // use this property is from the main repo, we can just mark it as true
+                // i will fork the main repo afterwards
 				LitecoinWorkCalculation = true
 			})
 			.SetBase58Bytes(Base58Type.PUBKEY_ADDRESS, new byte[] { 48 })
@@ -214,7 +216,7 @@ namespace NBitcoin.Litecoin
 		private static void AssertRegistered()
 		{
 			if(_Mainnet == null)
-				throw new InvalidOperationException("You need to call LitecoinNetworks.Register() before using the litecoin networks");
+				throw new InvalidOperationException("You need to call DigibyteNetworks.Register() before using the digibyte networks");
 		}
 
 		private static Network _Testnet;
